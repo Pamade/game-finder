@@ -1,0 +1,430 @@
+.games {
+  margin: 4rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.games__top-info {
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.games__game {
+  margin: 1rem;
+  background-color: #9B2226;
+  border-radius: 2%;
+  width: 100%;
+  padding: 1rem 0rem 3rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.games__game:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #e04d52;
+}
+
+.games__title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.games__image {
+  min-width: 100%;
+  margin: 1rem auto;
+  height: 10rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.games__genre {
+  display: inline-block;
+  padding: 5px;
+  margin: 0.3rem 1rem;
+}
+
+.games__metacritic {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 0 0.2rem;
+  line-height: 30px;
+  background-color: #cfb000;
+  border-radius: 50px;
+}
+
+.button-page__btn--current {
+  color: white;
+  background-color: #34c99c;
+}
+
+.button-page__btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+  .games__game {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .games__game {
+    width: 25%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
+.game-details {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  border-radius: 5px;
+  border: 3px solid #9B2226;
+  height: 90vh;
+  width: 90vw;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.game-details__informations {
+  background-color: rgba(42, 45, 46, 0.9);
+  padding: 1rem 0;
+}
+
+.game-details__name {
+  width: 65%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.game-details__release-date {
+  font-size: 14px;
+  margin: 0.3rem 0;
+}
+
+.game-details__close-mark {
+  position: absolute;
+  color: white;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 50%;
+  right: 0;
+  top: 2%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.game-details__close-mark:hover {
+  background-color: black;
+}
+
+.game-details__container-description-ratings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game-details__box-description {
+  margin: 1rem 0;
+  width: 80%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+  font-size: 12px;
+  padding: 1rem;
+}
+
+.game-details__box-ratings {
+  width: 20rem;
+  margin-bottom: 1rem;
+  color: black;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.game-details__links {
+  margin: 1rem 0;
+}
+
+.game-details__links-link {
+  margin: 0 1rem;
+  border-radius: 50%;
+  padding: 0 1rem;
+}
+
+.game-details__links-link:hover {
+  background-color: #f3525a;
+}
+
+.game-details__genre {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px;
+  margin: 0.3rem 1rem;
+}
+
+.game-details__active {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .game-details {
+    height: 71vh;
+    width: 71vw;
+  }
+  .game-details__container-description-ratings {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .game-details__box-ratings {
+    margin: 2rem 0;
+  }
+  .game-details__box-description {
+    width: 50%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.genres {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+}
+
+.genres__genre {
+  display: inline-block;
+  color: #f8e4e4;
+  background-color: purple;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 13px;
+  margin: 0.3rem 0.1rem;
+  text-decoration: none;
+}
+
+.active {
+  color: #9dff00;
+  font-weight: bold;
+}
+
+.search {
+  margin: 1rem 0;
+}
+
+.search__input {
+  padding: 0.3rem;
+  border: 2px solid white;
+  margin-right: 0.3rem;
+  background: transparent;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  outline: none;
+}
+
+.search__btn {
+  color: white;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid white;
+  background: #dd4a0f;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.search__btn:after {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 6px;
+  width: 90%;
+  height: 70%;
+  border: 1px solid white;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.search__btn:hover:after {
+  opacity: 1;
+}
+
+.filters__box {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.filters__btn {
+  display: block;
+  margin: 1rem auto;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.4px;
+  background-color: #6721e9;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.filters__btn:hover {
+  background-color: #875dd6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: #000d13;
+  color: #EDF2F4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Arial';
+  min-height: 100vh;
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 60%;
+  }
+}
+
+.pos-center {
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  z-index: 5;
+}
+
+.loader {
+  z-index: 5;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 0.6s linear infinite;
+          animation: spin 0.6s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,108 @@
+.game-details{
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-radius: 5px;
+    border: 3px solid #9B2226;  
+    height: 90vh;
+    width: 90vw;
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2;
+    &__informations{
+      background-color: rgba(42, 45, 46, 0.9);
+      padding: 1rem 0;
+    }
+    &__name{
+      width: 65%;
+      margin: 0 auto;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    &__release-date{
+      font-size: 14px;
+      margin: 0.3rem 0;
+    }
+    &__close-mark{
+      position: absolute;
+      color: white;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      background-color: red;
+      cursor: pointer;
+      border-radius: 50%;
+      right: 0;
+      top: 2%;
+      transition: .3s;
+      &:hover{
+        background-color: black;
+      }
+    }
+    &__container-description-ratings{
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+      background-position: center;
+      align-items: center;
+      justify-content: center;    
+    }
+    &__box-description{
+      margin: 1rem 0;
+      width: 80%;
+      color: white;
+      background-color: rgba(0,0,0,0.6);
+      text-align: left;
+      font-size: 12px;
+      padding: 1rem;
+    }
+    &__box-ratings{
+      width: 20rem;
+      margin-bottom: 1rem;
+      color: black;
+      font-weight: bold;
+      z-index: 10;
+    }
+    &__links{
+      margin: 1rem 0;
+    }
+    &__links-link{
+      margin: 0 1rem;
+      border-radius: 50%;
+      padding:0 1rem;
+      &:hover{
+        background-color: rgb(243, 82, 90);
+      }
+    }
+    &__genre{
+      display: inline-block;
+      font-size: 14px;
+      padding: 5px;
+      margin:0.3rem 1rem;
+    }
+    &__active{
+      display: block;
+    }
+}
+
+@media (min-width: 1200px){
+  .game-details{
+    height: 71vh;
+    width: 71vw;
+    &__container-description-ratings{
+      flex-direction: row;
+    }
+    &__box-ratings{
+      margin: 2rem 0;      
+    }
+    &__box-description{
+      width: 50%;
+      align-self: center;
+    }
+  }
+}
