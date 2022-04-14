@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState,useCallback } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import GamesDisplay from '../GameDetails/GameDetails'
 import { setPageNum, changeGameInformations} from '../features/games/gamesSlice'
@@ -14,8 +14,8 @@ function DisplayResults({apiCall}) {
     let pageNum = useSelector(state => state.games.pageNum)
     const [isLoadedList, setIsLoadedList] = useState(false) 
     const [previousLocation, setPreviousLocation] = useState('')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const getData = (apiName) => {
+    
+    const getData = useCallback((apiName) => {
         
         setIsLoadedList(false)
         if (previousLocation !== location.pathname){
@@ -34,11 +34,11 @@ function DisplayResults({apiCall}) {
             })        
         }        
         
-    }
-
+    }, [dispatch, location.pathname, navigate, previousLocation]
+    )
     useLayoutEffect(() => {
         getData(apiCall)
-    }, [dispatch,  navigate, location.pathname, previousLocation, pageNum, apiCall])
+    }, [pageNum, apiCall, getData])
 
     if (!isLoadedList) {
         return (
