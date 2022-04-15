@@ -87,17 +87,6 @@
   border-radius: 50px;
 }
 
-.button-page__btn--current {
-  color: white;
-  background-color: #34c99c;
-}
-
-.button-page__btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-}
-
 @media (min-width: 768px) {
   .games__game {
     width: 35%;
@@ -355,6 +344,17 @@
 
 .filters__btn:hover {
   background-color: #875dd6;
+}
+
+.button-page__btn--current {
+  color: white;
+  background-color: #34c99c;
+}
+
+.button-page__btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 }
 
 * {

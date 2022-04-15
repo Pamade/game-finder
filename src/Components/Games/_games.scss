@@ -60,19 +60,6 @@
 
   }
 
-  .button-page{
-    &__btn--current{
-      color: white;
-      background-color: rgb(52, 201, 156);
-    }
-    &__btn{
-      width: 40px;
-      height: 40px;
-      border: 1px solid black;
-    }
-  }
-
-  
   @media (min-width:768px) {
     .games{
       &__game{
@@ -88,5 +75,4 @@
           text-align: center;
         }
       }
-    
 }
