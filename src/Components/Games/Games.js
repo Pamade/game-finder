@@ -12,7 +12,9 @@ function GamesByName() {
     const gameName = search === '' ? title : search
 
     return (
-        <DisplayResults apiCall={`https://api.rawg.io/api/games?search=${gameName}&page=${pageNum}&search_exact&key=7597f52c3a1b4d5d82caf6b0437c43eb`} />
+        <div>
+            <DisplayResults apiCall={`https://api.rawg.io/api/games?search=${gameName}&page=${pageNum}&search_exact&key=7597f52c3a1b4d5d82caf6b0437c43eb`} />
+        </div>
     )
 }
 

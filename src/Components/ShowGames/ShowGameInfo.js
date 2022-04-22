@@ -8,9 +8,9 @@ const ShowGameInfo = ({gameId}) => {
     
     const [gameDetails, setGameDetails] = useState({})
     const [isLoadedGameDetails, setIsLoadedGameDetails] = useState(true)
+    const [listOfAchievements, setListOfAchievments] = useState([])
     const isWindowHidden = useSelector(state => state.games.isWindowHidden)
     const dispatch = useDispatch()
-    
     useEffect(() => {
         
         if (gameId !== 0) {
@@ -35,10 +35,12 @@ const ShowGameInfo = ({gameId}) => {
                 }     
             )
             setIsLoadedGameDetails(false)
+            fetch(`https://api.rawg.io/api/games/${gameId}/achievements?key=7597f52c3a1b4d5d82caf6b0437c43eb&search_exact`)
+            .then(res => res.json())
+            .then(data => setListOfAchievments(data.results))
         }
-        
     }, [gameId]
-    )
+    )        
 
     const hideGameInfo = () => {
         dispatch(changeWindowState(false))
@@ -67,10 +69,24 @@ const ShowGameInfo = ({gameId}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="game-details__links">
-                        {gameDetails.redditUrl !== '' ?<a className="game-details__links-link" target="_blank" rel="noreferrer" href={gameDetails.redditUrl}><img style={{width:'3rem'}} src="https://www.reddiquette.com/wp-content/uploads/2020/09/What-Is-The-Reddit-Logo-Called.png" alt="reddit"/></a>: null}
-                        {gameDetails.website !== '' ? <a className="game-details__links-link" target="_blank" rel="noreferrer" href={gameDetails.website}><img style={{width:'3rem'}} src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-file-globe-icon-svg-wikimedia-commons-21.png" alt="website"/></a> : null}
-                     </div>
+                    <div className="game-details__achievments-links">
+                        <div className="game-details__achievments">
+                            <h3 className="game-details__achievment-heading">List of achievements</h3>
+                            {listOfAchievements.map((item) => (
+                                <div key={item.name} className="game-details__achievment-box">
+                                    <p className="game-details__achievment-name">{item.name}</p>
+                                    <div className="game-details__descirption-image">
+                                        <img className="game-details__achievment-image" src={item.image} alt="achievmentimage" />
+                                        <p className="game-details__achievment-description">{item.description}</p>
+                                    </div>
+                                </div>
+                                ))}
+                        </div>
+                        <div className="game-details__links">
+                            {gameDetails.redditUrl !== '' ?<a className="game-details__links-link" target="_blank" rel="noreferrer" href={gameDetails.redditUrl}><img style={{width:'3rem'}} src="https://www.reddiquette.com/wp-content/uploads/2020/09/What-Is-The-Reddit-Logo-Called.png" alt="reddit"/></a>: null}
+                            {gameDetails.website !== '' ? <a className="game-details__links-link" target="_blank" rel="noreferrer" href={gameDetails.website}><img style={{width:'3rem'}} src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-file-globe-icon-svg-wikimedia-commons-21.png" alt="website"/></a> : null}
+                        </div>
+                    </div>
                     <div className="game-details__close-mark" onClick={hideGameInfo}>X</div>                
                 </div>
             </div>   

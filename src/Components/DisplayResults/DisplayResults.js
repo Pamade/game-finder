@@ -27,6 +27,7 @@ function DisplayResults({apiCall}) {
             .then(res => res.json())
             .then(data => {
                 dispatch(changeGameInformations(data.results))
+                console.log(data)
                 if (data.results.length === 0) {
                     navigate('../error')
                 }

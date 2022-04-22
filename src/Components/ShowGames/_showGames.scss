@@ -1,3 +1,5 @@
+$padding-achievments: 0.2rem;
+
 .game-details{
     position: fixed;
     top: 50%;
@@ -85,6 +87,45 @@
       padding: 5px;
       margin:0.3rem 1rem;
     }
+    &__achievments{
+      max-height: 18vh;
+      overflow: auto;
+      text-align: left;
+      width: 80%;
+      margin: 0 auto;
+    }
+    &__achievment-box{
+      margin: 1rem auto;
+    }
+    &__descirption-image{
+      width: 80%;
+      display: flex;
+      align-items: center;
+    }
+    &__achievment-heading{
+      background-color: rgb(243, 243, 243);
+      padding: $padding-achievments;
+      color: rgb(32, 27, 27);
+    }
+    &__achievment-name{
+      padding: $padding-achievments;
+      background-color: rgb(31, 25, 25);
+    }
+    &__achievment-description{
+      margin-left: 0.5rem;
+      font-size: 13px;
+      padding: 0.5rem;
+      background-color: rgb(131, 55, 32);
+      border-radius: 30px;
+    }
+    &__achievment-image{
+      width: 60px;
+    }
+    &__links{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
     &__active{
       display: block;
     }
@@ -92,8 +133,8 @@
 
 @media (min-width: 1200px){
   .game-details{
-    height: 71vh;
-    width: 71vw;
+    height: 80vh;
+    width: 80vw;
     &__container-description-ratings{
       flex-direction: row;
     }
@@ -103,6 +144,18 @@
     &__box-description{
       width: 50%;
       align-self: center;
+    }
+    &__achievments-links{
+      display: flex;
+      width: 75%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    &__achievment-image{
+      width: 80px;
+    }
+    &__links{
+      width: 30%;
     }
   }
 }
