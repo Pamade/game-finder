@@ -71,7 +71,7 @@ const ShowGameInfo = ({gameId}) => {
                     </div>
                     <div className="game-details__achievments-links">
                         <div className="game-details__achievments">
-                            <h3 className="game-details__achievment-heading">List of achievements</h3>
+                            {listOfAchievements === [] ? <h3 className="game-details__achievment-heading">List of achievements</h3> : ''}
                             {listOfAchievements.map((item) => (
                                 <div key={item.name} className="game-details__achievment-box">
                                     <p className="game-details__achievment-name">{item.name}</p>
