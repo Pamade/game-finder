@@ -1,5 +1,5 @@
 
-# Strona MoGo</br>
+# Game Finder</br>
 
 
 ![img](https://i.imgur.com/ZS2Wlag.jpg)
