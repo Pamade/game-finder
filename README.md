@@ -4,7 +4,6 @@
 
 ![img](https://i.imgur.com/ZS2Wlag.jpg)
 
-https://pamade.github.io/MoGo/
 
 ## Użyte Technologie
 
